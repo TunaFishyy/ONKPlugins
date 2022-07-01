@@ -1,0 +1,4 @@
+name: ONK
+version: '1.0-SNAPSHOT'
+main: io.github.tunafishyy.onk.ONK
+api-version: 1.19
