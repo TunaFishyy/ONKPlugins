@@ -2,3 +2,6 @@ name: ONK
 version: '${project.version}'
 main: io.github.tunafishyy.onk.ONK
 api-version: 1.19
+commands:
+  aaustralija:
+    description: gives grom

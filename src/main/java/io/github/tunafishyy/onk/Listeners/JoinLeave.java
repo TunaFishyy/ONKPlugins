@@ -18,6 +18,27 @@ public class JoinLeave implements Listener {
         this.instance = instance;
     }
 
+    /*
+
+                       Warning
+
+            the clean code end here ^
+            please don't scroll any down
+
+
+
+            (the legend says,
+
+                Beneath lieth a cludge
+                But releaseth waits for nay man
+                Prithee f'rgvie mine own haste
+                Thee shalt taketh thy owneth omen
+
+             those who went down there, never came back...)
+
+
+    */
+
     @EventHandler
     public void onJoin(PlayerJoinEvent e) {
         //Ako igrac prvi put ulazi na server.
@@ -55,15 +76,14 @@ public class JoinLeave implements Listener {
 
         //Ako je prefix ukljucen
         if (instance.getConfig().getBoolean("set-prefix")) {
-            e.setQuitMessage(ChatColor.translateAlternateColorCodes('&',Objects.requireNonNull(instance.getConfig().getString("quit-message")).replaceAll("%prefix%",
-                    Objects.requireNonNull(instance.getConfig().getString("prefix"))).replaceAll("%player%",
-                    e.getPlayer().getDisplayName())));
+            e.setQuitMessage(ChatColor.translateAlternateColorCodes('&',instance.getConfig().getString("quit-message").replaceAll("%prefix%",
+                    instance.getConfig().getString("prefix")).replaceAll("%player%",
+                    p.getDisplayName())));
 
             //Ako je prefix iskljucen
         } else {
-            e.setQuitMessage(ChatColor.translateAlternateColorCodes('&',Objects.requireNonNull(instance.getConfig().getString("quit-message")).replaceAll("%prefix%",
-                    "").replaceAll("%player%",
-                    e.getPlayer().getDisplayName())));
+            e.setQuitMessage(ChatColor.translateAlternateColorCodes('&', instance.getConfig().getString("quit-message").replaceAll("%prefix%",
+                    "").replaceAll("%player%", p.getDisplayName())));
         }
     }
 

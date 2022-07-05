@@ -1,6 +1,6 @@
 set-prefix: true
 prefix: '&7[&4O&5n&4k&7]&f '
 first-join-message: '%prefix%%player% &eje prvi put usao na server&4!'
-join-message: '%prefix%%player% &ase pridruzio serveru&4!'
-quit-message: '%prefix%%player% &cje izisao sa servera&4!'
-max-lightning-distance: 1000
+join-message: '%prefix%%player% &ase pridruzio serveru!'
+quit-message: '%prefix%%player% &cje izisao sa servera!'
+max-lightning-distance: 255

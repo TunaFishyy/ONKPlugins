@@ -13,20 +13,14 @@ import java.util.Random;
 
 public class GromStap implements Listener {
 
-    private final ONK in;
-
     private final Random random = new Random();
-
-    public GromStap(ONK in) {
-        this.in = in;
-    }
 
     @EventHandler
     public void onCreeperKill(EntityDeathEvent e) {
         double r = random.nextDouble();
 
         // 1%
-        if (e instanceof Creeper) {
+        if (e.getEntity() instanceof Creeper) {
             Creeper c = (Creeper) e.getEntity();
 
             if (r <= 0.01) {
