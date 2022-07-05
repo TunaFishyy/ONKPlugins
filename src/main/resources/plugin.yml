@@ -5,3 +5,7 @@ api-version: 1.19
 commands:
   aaustralija:
     description: gives grom
+  katon:
+    description: Stvori se katon goukakyou no jutsu.
+  kresh:
+    description: Crashat ce ti se MC za 4 sekunde.

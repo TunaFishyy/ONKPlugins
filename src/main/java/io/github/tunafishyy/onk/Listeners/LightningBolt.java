@@ -29,23 +29,26 @@ public class LightningBolt implements Listener {
             if (!p.getInventory().getItemInMainHand().getItemMeta().hasLore()) return;
             if (!(e.getHand() == EquipmentSlot.OFF_HAND)) return;
 
-            int var = value--;
+            if (p.getInventory().getItemInMainHand().getItemMeta().getDisplayName().equals(ItemManager.getGrom().getItemMeta().getDisplayName())) {
 
-            if (!(var <= 0)) {
-                ItemManager.updateLore(p.getInventory().getItemInMainHand(), var);
-            } else {
-                if (p.getInventory().getItemInMainHand().getAmount() == 1) {
-                    p.getInventory().setItemInMainHand(new ItemStack(Material.AIR));
-                    p.playSound(p.getLocation(), Sound.ENTITY_ITEM_BREAK, 5, 5);
+                int var = value--;
+
+                if (!(var <= 0)) {
+                    ItemManager.updateLore(p.getInventory().getItemInMainHand(), var);
                 } else {
-                    p.getInventory().getItemInMainHand().setAmount(p.getInventory().getItemInMainHand().getAmount() - 1);
-                    p.playSound(p.getLocation(), Sound.ENTITY_ITEM_BREAK, 5, 5);
+                    if (p.getInventory().getItemInMainHand().getAmount() == 1) {
+                        p.getInventory().setItemInMainHand(new ItemStack(Material.AIR));
+                        p.playSound(p.getLocation(), Sound.ENTITY_ITEM_BREAK, 5, 5);
+                    } else {
+                        p.getInventory().getItemInMainHand().setAmount(p.getInventory().getItemInMainHand().getAmount() - 1);
+                        p.playSound(p.getLocation(), Sound.ENTITY_ITEM_BREAK, 5, 5);
+                    }
                 }
+
+                p.getWorld().strikeLightning(p.getTargetBlock(null, ONK.getPlugin().getConfig().getInt("max-lightning-distance")).getLocation());
+
+
             }
-
-            p.getWorld().strikeLightning(p.getTargetBlock(null, ONK.getPlugin().getConfig().getInt("max-lightning-distance")).getLocation());
-
-
         }
     }
 }

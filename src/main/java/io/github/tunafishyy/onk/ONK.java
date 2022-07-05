@@ -1,5 +1,7 @@
 package io.github.tunafishyy.onk;
 
+import io.github.tunafishyy.onk.Commands.Katon;
+import io.github.tunafishyy.onk.Commands.Kresh;
 import io.github.tunafishyy.onk.Commands.gromtest;
 import io.github.tunafishyy.onk.Listeners.DeathSkullDrop;
 import io.github.tunafishyy.onk.Listeners.Drops.GromStap;
@@ -21,11 +23,14 @@ public final class ONK extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new JoinLeave(this), this);
         getServer().getPluginManager().registerEvents(new DeathSkullDrop(), this);
         getServer().getPluginManager().registerEvents(new GromStap(), this);
+        getServer().getPluginManager().registerEvents(new io.github.tunafishyy.onk.Listeners.Katon(), this);
         getServer().getPluginManager().registerEvents(new LightningBolt(), this);
 
         Bukkit.addRecipe(GromStapic.getGrom());
 
         getCommand("aaustralija").setExecutor(new gromtest());
+        getCommand("kresh").setExecutor(new Kresh());
+        getCommand("katon").setExecutor(new Katon());
 
     }
 

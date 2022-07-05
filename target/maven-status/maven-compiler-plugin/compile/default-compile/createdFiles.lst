@@ -1,9 +1,12 @@
+io\github\tunafishyy\onk\Listeners\Katon.class
 io\github\tunafishyy\onk\Listeners\LightningBolt.class
 io\github\tunafishyy\onk\ONK.class
+io\github\tunafishyy\onk\Listeners\Drops\GromStap.class
+io\github\tunafishyy\onk\Commands\Katon.class
 io\github\tunafishyy\onk\Listeners\JoinLeave.class
 io\github\tunafishyy\onk\Recipes\Grom\GromStapic.class
 io\github\tunafishyy\onk\Commands\gromtest.class
-io\github\tunafishyy\onk\Listeners\Drops\GromStap.class
+io\github\tunafishyy\onk\Commands\Kresh.class
 io\github\tunafishyy\onk\ItemManager.class
 io\github\tunafishyy\onk\Recipes\Armor\fadfa.class
 io\github\tunafishyy\onk\Listeners\DeathSkullDrop.class

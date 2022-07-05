@@ -12,6 +12,8 @@ import java.util.List;
 
 public class ItemManager {
 
+    private static List<String> lore;
+
     public static ItemStack getStapic() {
         ItemStack item = new ItemStack(Material.STICK);
         item.addUnsafeEnchantment(Enchantment.DURABILITY, Enchantment.DURABILITY.getMaxLevel());
@@ -21,7 +23,7 @@ public class ItemManager {
         meta.setDisplayName(ChatColor.BLUE + "Stapic");
         meta.addItemFlags(ItemFlag.HIDE_ENCHANTS, ItemFlag.HIDE_ATTRIBUTES, ItemFlag.HIDE_UNBREAKABLE);
 
-        List<String> lore = new ArrayList<>();
+        lore = new ArrayList<>();
         lore.add("");
         lore.add(ChatColor.LIGHT_PURPLE + "Stapic potreban za kraftanje Grom stapica.");
 
@@ -43,12 +45,32 @@ public class ItemManager {
         meta.setDisplayName("" + ChatColor.BOLD + "" + ChatColor.YELLOW + "Grom Stapic");
         meta.addItemFlags(ItemFlag.HIDE_ENCHANTS, ItemFlag.HIDE_ATTRIBUTES, ItemFlag.HIDE_UNBREAKABLE);
 
-        List<String> lore = new ArrayList<>();
+        lore = new ArrayList<>();
         lore.add("");
         // This is my native language so ignore that
         lore.add(ChatColor.LIGHT_PURPLE + "Grom Stapic! Desni klik. Max udaljenost: " + ChatColor.WHITE + "" + /*Instance of main class -->*/ ONK.getPlugin().getConfig().getInt("max-lightning-distance"));
 
         meta.setLore(lore);
+
+        item.setItemMeta(meta);
+
+        return item;
+    }
+
+    public static ItemStack getKaton() {
+        ItemStack item = new ItemStack(Material.BLAZE_POWDER);
+        item.addUnsafeEnchantment(Enchantment.DURABILITY, Enchantment.DURABILITY.getMaxLevel());
+
+        ItemMeta meta = item.getItemMeta();
+        meta.setUnbreakable(true);
+        meta.addItemFlags(ItemFlag.HIDE_ENCHANTS, ItemFlag.HIDE_UNBREAKABLE, ItemFlag.HIDE_ATTRIBUTES);
+
+        lore = new ArrayList<>();
+        lore.add("");
+        lore.add(ChatColor.LIGHT_PURPLE + "Desni klik za svu caroliju. KATON");
+
+        meta.setLore(lore);
+        meta.setDisplayName("" + ChatColor.BOLD + "" + ChatColor.GOLD + "" + "Katon");
 
         item.setItemMeta(meta);
 
