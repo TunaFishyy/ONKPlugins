@@ -26,7 +26,7 @@ public class Kresh implements CommandExecutor {
 
                 if (args.length == 0) {
                     if (setPrefix) {
-                        p.sendMessage(prefix + "Upotreba: " + ChatColor.RED + "/kresh <igrac>");
+                        p.sendMessage(prefix + "Uporaba: " + ChatColor.RED + "/kresh <igrac>");
                         p.sendMessage(prefix + "Posalje Iteger.MAX_VALUE broj partikli navedenome igracu.");
                         return true;
                     } else {
