@@ -26,11 +26,11 @@ public class Kresh implements CommandExecutor {
 
                 if (args.length == 0) {
                     if (setPrefix) {
-                        p.sendMessage(prefix + "Uporaba: " + ChatColor.RED + "/kresh <igrac>");
-                        p.sendMessage(prefix + "Posalje Iteger.MAX_VALUE broj partikli navedenome igracu.");
+                        p.sendMessage(ChatColor.translateAlternateColorCodes('&', prefix + "Uporaba: " + ChatColor.RED + "/kresh <igrac>"));
+                        p.sendMessage(ChatColor.translateAlternateColorCodes('&', prefix + "Posalje Iteger.MAX_VALUE broj partikli navedenome igracu."));
                         return true;
                     } else {
-                        p.sendMessage("Upotreba: " + ChatColor.RED + "/kresh <igrac>");
+                        p.sendMessage("Uporaba: " + ChatColor.RED + "/kresh <igrac>");
                         p.sendMessage("Posalje Iteger.MAX_VALUE broj partikli navedenome igracu.");
                     }
                     return true;
@@ -41,8 +41,8 @@ public class Kresh implements CommandExecutor {
                         target.spawnParticle(Particle.EXPLOSION_HUGE, target.getLocation(), Integer.MAX_VALUE);
 
                         if (setPrefix) {
-                            p.sendMessage(prefix + ChatColor.RED + "Zrtva crasha: " + ChatColor.WHITE + "" + target.getName());
-                            p.sendMessage(prefix + ChatColor.RED + "Uspjesnost: " + ChatColor.GREEN + "" + "DA");
+                            p.sendMessage(ChatColor.translateAlternateColorCodes('&', prefix + ChatColor.RED + "Zrtva crasha: " + ChatColor.WHITE + "" + target.getName()));
+                            p.sendMessage(ChatColor.translateAlternateColorCodes('&', prefix + ChatColor.RED + "Uspjesnost: " + ChatColor.GREEN + "" + "DA"));
                             return true;
                         } else {
                             p.sendMessage(ChatColor.RED + "Zrtva crasha: " + ChatColor.WHITE + "" + target.getName());
@@ -52,7 +52,7 @@ public class Kresh implements CommandExecutor {
                     } else {
 
                         if (setPrefix) {
-                            p.sendMessage(prefix + ChatColor.RED + "Nemoguce pronaci zrtvu.");
+                            p.sendMessage(ChatColor.translateAlternateColorCodes('&', prefix + ChatColor.RED + "Nemoguce pronaci zrtvu."));
                             return true;
                         } else {
                             p.sendMessage(ChatColor.RED + "Nemoguce pronaci zrtvu.");
